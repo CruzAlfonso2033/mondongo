@@ -4,7 +4,7 @@ var swLocation = '/mondongo/sw.js';
 
 if (navigator.serviceWorker) {
     if (url.includes('localhost')) {
-        swLocation = '/mondongo/sw.js';
+        swLocation = '/sw.js';
     }
     navigator.serviceWorker.register(swLocation)
         .then(function(registration) {
