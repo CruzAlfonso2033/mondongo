@@ -1,12 +1,18 @@
 //Agregar Bloque 1 
-var url =window.location.href;
-var swLocation='/PWA/sw.js';
+var url = window.location.href;
+var swLocation = '/PWA/sw.js';
 
-if(navigator.serviceWorker){
-    if(url.includes('localhost')){
-        swLocation='/sw.js'
+if (navigator.serviceWorker) {
+    if (url.includes('localhost')) {
+        swLocation = '/sw.js';
     }
-    navigator.serviceWorker.register('/sw.js');
+    navigator.serviceWorker.register(swLocation)
+        .then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        })
+        .catch(function(error) {
+            console.log('ServiceWorker registration failed: ', error);
+        });
 }
 // Referencias de jQuery
 
