@@ -1,10 +1,10 @@
 //Agregar Bloque 1 
 var url = window.location.href;
-var swLocation = '/PWA/sw.js';
+var swLocation = '/mondongo/sw.js';
 
 if (navigator.serviceWorker) {
     if (url.includes('localhost')) {
-        swLocation = '/PWA/sw.js';
+        swLocation = '/mondongo/sw.js';
     }
     navigator.serviceWorker.register(swLocation)
         .then(function(registration) {
